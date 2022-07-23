@@ -1,3 +1,5 @@
+//basic template wireframe that all pages will use
+
 import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
@@ -6,33 +8,18 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Header from './Header';
-import Main from './Main';
-import Sidebar from './Sidebar';
-import Footer from './Footer';
-import logo from './SWLogo.png';
+import Header from '../Header';
+//import Main from './Main';
+import Sidebar from '../Sidebar';
+import Footer from '../Footer';
+//import logo from './SWLogo.png';
 
-const sections = [
-    { title: 'About', url: '#' },
-    { title: 'Archer', url: '#' },
-    { title: 'Barbarian', url: '#' },
-    { title: 'Bard', url: '#' },
-    { title: 'Druid', url: '#' },
-    { title: 'Knight', url: '#' },
-    { title: 'Mage', url: '#' },
-    { title: 'Members', url: '#' },
-    { title: 'Paladin', url: '#' },
-    { title: 'Rogue', url: '#' },
-  ];
 
   const sidebar = {
-    title: 'About/AN',
+    title: 'What are they?',
     description:
       'The Silenced Wolves are a guild of tight-knit members (whether they admit it or not) based entirely on the fictional world I have set up.',
     archives: [
-      //{ title: 'March 2020', url: '#' },
-      //{ title: 'February 2020', url: '#' },
-      //{ title: 'January 2020', url: '#' },
       { title: 'About Us', url: '#' },
       { title: 'Qualifications and Achievements', url: '#' },
       { title: 'Important Persons', url: '#' },
@@ -56,7 +43,7 @@ export default function TemplatePage() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Container maxWidth="lg">
-            <Header title="The Silenced Wolves" sections={sections} />
+            <Header title="The Silenced Wolves" />
             <main>
               <Grid container spacing={4}>
               </Grid>

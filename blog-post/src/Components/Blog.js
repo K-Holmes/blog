@@ -7,29 +7,22 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import logo from './SWLogo.png';
-//import ReactMarkdown from "markdown-to-jsx";
 import Header from './Header';
 import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
-import Main from './Main';
+//import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
+import {Route, Routes} from 'react-router-dom';
+import './styles.css';
+import TemplatePage from './SidePages/TemplatePage';
+import Members from './SidePages/Members';
+import About from './SidePages/About';
+import Quest from './SidePages/Quest';
+import Navbar from './Navbar';
 // import post1 from './blog-post.1.md';
 // import post2 from './blog-post.2.md';
 // import post3 from './blog-post.3.md';
-
-const sections = [
-  { title: 'About', url: '#' },
-  { title: 'Archer', url: '#' },
-  { title: 'Barbarian', url: '#' },
-  { title: 'Bard', url: '#' },
-  { title: 'Druid', url: '#' },
-  { title: 'Knight', url: '#' },
-  { title: 'Mage', url: '#' },
-  { title: 'Members', url: '#' },
-  { title: 'Paladin', url: '#' },
-  { title: 'Rogue', url: '#' },
-];
 
 
 const mainFeaturedPost = {
@@ -63,13 +56,10 @@ const featuredPosts = [
 //const posts = [post1, post2, post3];
 
 const sidebar = {
-  title: 'About/AN',
+  title: 'What are they?',
   description:
     'The Silenced Wolves are a guild of tight-knit members (whether they admit it or not) based entirely on the fictional world I have set up.',
   archives: [
-    //{ title: 'March 2020', url: '#' },
-    //{ title: 'February 2020', url: '#' },
-    //{ title: 'January 2020', url: '#' },
     { title: 'About Us', url: '#' },
     { title: 'Qualifications and Achievements', url: '#' },
     { title: 'Important Persons', url: '#' },
@@ -89,35 +79,21 @@ const sidebar = {
 const theme = createTheme();
 
 export default function Blog() {
-
-//     let [readable, setReadable] = React.useState({ md: "" });
-
-//   React.useEffect(() => {
-//     fetch(post1)
-//       .then((res) => res.text())
-//       .then((md) => {
-//         setReadable({ md });
-//       });
-//   }, []);
-
-    // const [posts, setPost] = React.useState('');
-
-    // React.useEffect(() => {
-    //     import('//blog-post.1.md')
-    //     .then(res => {
-    //         fetch(res.default)
-    //             .then(res => res.text())
-    //             .then(res => setPost(res));
-    //     })
-    //     .catch(err => console.log(err))
-
-    // });
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="The Silenced Wolves" sections={sections} />
+      <Header className ="mainheader" title="The Silenced Wolves" />
+        <Navbar />
+      <div className = "container">
+        <Routes>
+          {/* <Route path = "/" element={<Home />} /> */}
+          <Route path = "/members" element={<Members />} />
+          <Route path = "/template" element={<TemplatePage />} />
+          <Route path = "/about" element={<About />} />
+          <Route path = "/quest" element={<Quest />} />
+        </Routes>
+      </div>
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>

@@ -1,0 +1,1 @@
+//display basic 'about us' style article
