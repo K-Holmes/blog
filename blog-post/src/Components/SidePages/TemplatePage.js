@@ -8,8 +8,6 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Header from '../Header';
-//import Main from './Main';
 import Sidebar from '../Sidebar';
 import Footer from '../Footer';
 //import logo from './SWLogo.png';
@@ -43,12 +41,13 @@ export default function TemplatePage() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Container maxWidth="lg">
-            <Header title="The Silenced Wolves" />
             <main>
               <Grid container spacing={4}>
               </Grid>
               <Grid container spacing={5} sx={{ mt: 3 }}>
               <h2>Page Title Here</h2>
+              {/* </Grid>
+              <Grid container spacing = {5} xs ={12}> */}
                 <Sidebar
                   title={sidebar.title}
                   description={sidebar.description}

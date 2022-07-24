@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
+import { Link } from 'react-router-dom'
+import './styles.css'
 
 function MainFeaturedPost(props) {
   const { post } = props;
@@ -36,7 +37,7 @@ function MainFeaturedPost(props) {
       />
       <Grid container>
         <Grid item md={6}>
-          <Box
+          <Box className = "mainPostLink"
             sx={{
               position: 'relative',
               p: { xs: 3, md: 6 },
@@ -49,7 +50,7 @@ function MainFeaturedPost(props) {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
             </Typography>
-            <Link variant="subtitle1" href="#">
+            <Link to = "/about">
               {post.linkText}
             </Link>
           </Box>

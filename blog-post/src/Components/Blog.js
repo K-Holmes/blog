@@ -20,6 +20,7 @@ import Members from './SidePages/Members';
 import About from './SidePages/About';
 import Quest from './SidePages/Quest';
 import Navbar from './Navbar';
+import Register from './SidePages/Register'
 // import post1 from './blog-post.1.md';
 // import post2 from './blog-post.2.md';
 // import post3 from './blog-post.3.md';
@@ -31,7 +32,7 @@ const mainFeaturedPost = {
     "Whether you're a newcomer in search of a guild, or a frequent traveler brushing yourself up on our history, the Silenced Wolves' ideals remain.",
   image: 'https://murals-weblinc.netdna-ssl.com/product_images/wood-panels-used-as-wall-20534990/5ec82d94bd89dd0018f75968/product_large_image.jpg?c=1590177172',
   imageText: 'main image description',
-  linkText: 'Continue reading…',
+  linkText: 'Click here to learn more',
 };
 
 const featuredPosts = [
@@ -42,6 +43,7 @@ const featuredPosts = [
       'Come meet the guild members!',
     image: logo,
     imageLabel: 'Image Text',
+    path: "/members",
   },
   {
     title: 'Adventuring Classes',
@@ -92,6 +94,7 @@ export default function Blog() {
           <Route path = "/template" element={<TemplatePage />} />
           <Route path = "/about" element={<About />} />
           <Route path = "/quest" element={<Quest />} />
+          <Route path = "/register" element={<Register />} />
         </Routes>
       </div>
         <main>

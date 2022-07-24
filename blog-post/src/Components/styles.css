@@ -34,7 +34,7 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    padding: .25rem;
+    padding: .5rem;
 }
 
 .nav li:hover {
@@ -44,4 +44,20 @@ body {
 /* //work on coloring better */
 .mainheader {
     background-color: aquamarine;
+}
+
+.regButton a{
+    text-decoration: none;
+}
+
+.mainPostLink a{
+    text-decoration: none;
+}
+
+.nav a:hover {
+    background-color: #777;
+}
+
+.centerHeading {
+    text-align:center;
 }

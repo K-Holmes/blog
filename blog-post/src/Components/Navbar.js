@@ -13,13 +13,13 @@ export default function Navbar() {
                 <Link to = "/members">Members</Link>
             </li>
             <li>
-                <Link to = "/classes">Classes</Link>
+                <Link to = "/classes">Classes (blank)</Link>
             </li>
             <li>
-                <Link to = "/quest">Quest Board</Link>
+                <Link to = "/quest">Quest Board (blank)</Link>
             </li>
             <li>
-                <Link to = "/template">3</Link>
+                <Link to = "/template">Template Page (temp link)</Link>
             </li>
         </ul>
     </nav>
