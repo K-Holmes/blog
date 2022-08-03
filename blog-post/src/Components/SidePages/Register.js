@@ -18,10 +18,52 @@ import Footer from '../Footer';
 import HouseIcon from '@mui/icons-material/House';
 import SchoolIcon from '@mui/icons-material/School';
 import InputAdornment from '@mui/material/InputAdornment';
+import MenuItem from '@mui/material/MenuItem';
 
 const theme = createTheme();
 
+const classes = [
+  {
+    value: 'AR',
+    label: 'Archer',
+  },
+  {
+    value: 'BN',
+    label: 'Barbarian',
+  },
+  {
+    value: 'BD',
+    label: 'Bard',
+  },
+  {
+    value: 'DD',
+    label: 'Druid',
+  },
+  {
+    value: 'KT',
+    label: 'Knight',
+  },
+  {
+    value: 'ME',
+    label: 'Mage',
+  },
+  {
+    value: 'PN',
+    label: 'Paladin',
+  },
+  {
+    value: 'RE',
+    label: 'Rogue',
+  },
+];
+
 export default function SignUp() {
+  const [advClass, setClass] = React.useState('US');
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setClass(event.target.value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -74,20 +116,27 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  id="outlined-select-country"
+                  select
                   required
-                  fullWidth
-                  id="classType"
                   label="Adventuring Class"
-                  name="classType"
-                  autoComplete="classType"
+                  value={advClass}
+                  onChange={handleChange}
+                  fullWidth
                   InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
+                    startAdornment: (
+                      <InputAdornment position="start">
                         <SchoolIcon />
                       </InputAdornment>
                     ),
                   }}
-                />
+                >
+                  {classes.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
               </Grid>
               <Grid item xs={12}>
                 <TextField
