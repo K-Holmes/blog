@@ -1,6 +1,5 @@
 //display basic 'about us' style article
 
-
 import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
@@ -9,13 +8,15 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-//import logo from '../SWLogo.png';
+import logo from '../SWLogo.png';
 import Sidebar from '../Sidebar';
 import Footer from '../Footer';
 import '../styles.css';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import EastIcon from '@mui/icons-material/East';
+import { Link } from 'react-router-dom'
+
 
 const sidebar = {
   title: 'About/AN',
@@ -49,14 +50,22 @@ export default function Blog() {
         <main>
             <div className = "centerHeading">
             <h1 className = "centerHeading">About Us</h1>
-            <h3>Our Mission</h3>
+            <img src= {logo} alt="logo" width={350}/>
+            <h2>Our Mission</h2>
             <p>The Silenced Wolves are a small guild located in the 
                 kingdom of Lyvear. Dedicated to maintaining the peace, 
                 they tackle any odd job thrown at them and are currently 
-                ranked as a common-level guild.</p>
+                ranked as a common-level guild. Their true mission is to
+                acquire the greatest guild status available to Lyvereans;
+                King's Guild. Only given to one guild at a time, this status
+                grants for the highest level of respect and access to quests
+                sanctioned by the King himself. To acquire this ranking,
+                a guild must place first in the annual Guild Games
+                hosted by the kingdom. <Link to = "/members">About</Link></p>
 
             <h3>RANK STATUS</h3>
             {/*Current status of the Silenced Wolves' ranking- Find a way to center */}
+            <div className='rankings'>
             <Stack direction="row" spacing={2}>
                 <Avatar alt="Starter" src="https://www.colorpsychology.org/wp-content/uploads/2021/05/neon-green-f.jpg" />
                 <EastIcon/>
@@ -66,7 +75,8 @@ export default function Blog() {
                 <EastIcon/>
                 <Avatar alt="King's Guild" src="https://images.saatchiart.com/saatchi/782752/art/7094065/6163389-HSC00001-7.jpg" />
             </Stack>
-    <p>Starter Level- Common Level- Advanced Level- King's Guild</p>
+            </div>
+            <p>Starter Level- Common Level- Advanced Level- King's Guild</p>
             </div>
 
           <Grid container spacing={5} sx={{ mt: 3 }}>

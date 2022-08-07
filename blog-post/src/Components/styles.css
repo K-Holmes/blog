@@ -61,3 +61,18 @@ body {
 .centerHeading {
     text-align:center;
 }
+
+.rankings {
+    justify-content: center;
+    display: flex;
+}
+
+.gridTemplate {
+    display: grid;
+    grid-template-columns: auto 300px;
+}
+
+.newGrid {
+    display: grid;
+    grid-template-columns: auto min-content;
+}

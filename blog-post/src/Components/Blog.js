@@ -1,26 +1,17 @@
 import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import logo from './SWLogo.png';
-import Header from './Header';
 import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
 //import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-import {Route, Routes} from 'react-router-dom';
 import './styles.css';
-import TemplatePage from './SidePages/TemplatePage';
-import Members from './SidePages/Members';
-import About from './SidePages/About';
-import Quest from './SidePages/Quest';
-import Navbar from './Navbar';
-import Register from './SidePages/Register'
 // import post1 from './blog-post.1.md';
 // import post2 from './blog-post.2.md';
 // import post3 from './blog-post.3.md';
@@ -84,19 +75,6 @@ export default function Blog() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container maxWidth="lg">
-      <Header className ="mainheader" title="The Silenced Wolves" />
-        <Navbar />
-      <div className = "container">
-        <Routes>
-          {/* <Route path = "/" element={<Home />} /> */}
-          <Route path = "/members" element={<Members />} />
-          <Route path = "/template" element={<TemplatePage />} />
-          <Route path = "/about" element={<About />} />
-          <Route path = "/quest" element={<Quest />} />
-          <Route path = "/register" element={<Register />} />
-        </Routes>
-      </div>
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>
@@ -113,7 +91,6 @@ export default function Blog() {
             />
           </Grid>
         </main>
-      </Container>
       <Footer
         //title="Footer"
         //description="Something here to give the footer a purpose!"

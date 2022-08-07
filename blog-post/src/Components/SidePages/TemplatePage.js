@@ -42,19 +42,19 @@ export default function TemplatePage() {
           <CssBaseline />
           <Container maxWidth="lg">
             <main>
-              <Grid container spacing={4}>
-              </Grid>
-              <Grid container spacing={5} sx={{ mt: 3 }}>
-              <h2>Page Title Here</h2>
-              {/* </Grid>
-              <Grid container spacing = {5} xs ={12}> */}
+            <div className="gridTemplate">
+              <div>
+              <h2 className='centerHeading'>Page Title Here</h2>
+              </div>
+              <div>
                 <Sidebar
                   title={sidebar.title}
                   description={sidebar.description}
                   archives={sidebar.archives}
                   social={sidebar.social}
                 />
-              </Grid>
+                </div>
+              </div>
             </main>
           </Container>
           <Footer
