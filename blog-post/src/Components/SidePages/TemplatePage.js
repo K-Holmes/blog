@@ -18,7 +18,7 @@ import Footer from '../Footer';
     description:
       'The Silenced Wolves are a guild of tight-knit members (whether they admit it or not) based entirely on the fictional world I have set up.',
     archives: [
-      { title: 'About Us', url: '#' },
+      { title: 'About Us', url: '/about' },
       { title: 'Qualifications and Achievements', url: '#' },
       { title: 'Important Persons', url: '#' },
       { title: 'Kingdoms and Territories', url: '#' },

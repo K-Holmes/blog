@@ -57,10 +57,10 @@ export default function Blog() {
             <p>Every adventurer, no matter how small must 
                 choose a class to be affiliated with. This 
                 can be determined by free choice, skill, or
-                 natural affinity. <Link to = "/members">About</Link></p>
+                 natural affinity. <Link to = "/knight">test</Link></p>
                  <h3>Classes</h3>
             <p>The following classes are available to adventurers upon registration; <br/>
-            Knight <br/> Bard <br/> Mage <br/> Rogue <br/> Barbarian <br/> Paladin <br/>
+            <Link to = "/knight">Knight</Link> <br/> Bard <br/> <Link to = "/mage">Mage</Link> <br/> <Link to = "/rogue">Rogue</Link> <br/> Barbarian <br/> Paladin <br/>
             Druid <br/> Archer</p>
             </div>
 

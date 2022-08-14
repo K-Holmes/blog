@@ -76,3 +76,8 @@ body {
     display: grid;
     grid-template-columns: auto min-content;
 }
+
+.containerPad {
+    padding: 0;
+    margin: 0;
+}

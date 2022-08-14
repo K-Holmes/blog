@@ -19,6 +19,9 @@ import HouseIcon from '@mui/icons-material/House';
 import SchoolIcon from '@mui/icons-material/School';
 import InputAdornment from '@mui/material/InputAdornment';
 import MenuItem from '@mui/material/MenuItem';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useFormik } from "formik";
+import * as Yup from 'yup';
 
 const theme = createTheme();
 
@@ -58,7 +61,34 @@ const classes = [
 ];
 
 export default function SignUp() {
-  const [advClass, setClass] = React.useState('US');
+
+  const validationSchema = Yup.object().shape({
+    firstName: Yup.string()
+    .required("First Name is required")
+    .min(3, "First Name must be at least 3 characters"),
+    lastName: Yup.string()
+      .required("Last Name is required")
+      .min(3, "Last Name must be at least 3 characters"),
+    address: Yup.string()
+      .required("Address is required")
+      .min(6, "Address must be at least 6 characters")
+  });
+
+  const formik = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      address: "",
+    },
+    validationSchema,
+    // validateOnChange: false,
+    // validateOnBlur: false,
+    onSubmit: (data) => {
+      console.log(JSON.stringify(data, null, 2));
+    },
+  });
+
+  const [advClass, setClass] = React.useState('AR');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setClass(event.target.value);
@@ -68,8 +98,8 @@ export default function SignUp() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+      email: data.get('firstName'),
+      password: data.get('address'),
     });
   };
 
@@ -91,7 +121,7 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Guild Application
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" noValidate onSubmit={formik.handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -102,7 +132,12 @@ export default function SignUp() {
                   id="firstName"
                   label="First Name"
                   autoFocus
+                  onChange={formik.handleChange}
+                  value={formik.values.firstName}
                 />
+                <div className="text-danger">
+                {formik.errors.firstName ? formik.errors.firstName : null}
+                </div>
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -112,7 +147,12 @@ export default function SignUp() {
                   label="Last Name"
                   name="lastName"
                   autoComplete="family-name"
+                  onChange={formik.handleChange}
+                  value={formik.values.lastName}
                 />
+                <div className="text-danger">
+                {formik.errors.lastName ? formik.errors.lastName : null}
+                </div>
               </Grid>
               <Grid item xs={12}>
                 <TextField
@@ -153,7 +193,12 @@ export default function SignUp() {
                       </InputAdornment>
                     ),
                   }}
+                  onChange={formik.handleChange}
+                  value={formik.values.address}
                 />
+                <div className="text-danger">
+                {formik.errors.address ? formik.errors.address : null}
+                </div>
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
