@@ -60,8 +60,15 @@ export default function Blog() {
                  natural affinity. <Link to = "/knight">test</Link></p>
                  <h3>Classes</h3>
             <p>The following classes are available to adventurers upon registration; <br/>
-            <Link to = "/knight">Knight</Link> <br/> Bard <br/> <Link to = "/mage">Mage</Link> <br/> <Link to = "/rogue">Rogue</Link> <br/> Barbarian <br/> Paladin <br/>
-            Druid <br/> Archer</p>
+            <Link to = "/knight">Knight</Link> 
+            <br/> <Link to = "/bard">Bard</Link>  
+            <br/> <Link to = "/mage">Mage</Link> 
+            <br/> <Link to = "/rogue">Rogue</Link> 
+            <br/> <Link to = "/barbarian">Barbarian</Link>  
+            <br/> Paladin 
+            <br/>
+            Druid 
+            <br/> Archer</p>
             </div>
 
 

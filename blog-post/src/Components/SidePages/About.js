@@ -61,7 +61,7 @@ export default function Blog() {
                 grants for the highest level of respect and access to quests
                 sanctioned by the King himself. To acquire this ranking,
                 a guild must place first in the annual Guild Games
-                hosted by the kingdom. <Link to = "/members">About</Link></p>
+                hosted by the kingdom. </p>
 
             <h3>RANK STATUS</h3>
             {/*Current status of the Silenced Wolves' ranking- Find a way to center */}

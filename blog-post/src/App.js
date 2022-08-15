@@ -14,6 +14,8 @@ import Classes from './Components/SidePages/Classes';
 import Knight from './Components/SidePages/Classes/Knight';
 import Mage from './Components/SidePages/Classes/Mage';
 import Rogue from './Components/SidePages/Classes/Rogue';
+import Bard from './Components/SidePages/Classes/Bard';
+import Barbarian from './Components/SidePages/Classes/Barbarian';
 // import Template from './Components/TemplatePage'
 // import {Route, Routes} from 'react-router-dom'
 // import Members from './Components/Members'
@@ -35,8 +37,8 @@ function App() {
           <Route path = "/classes" element={<Classes />} />
 
           <Route path = "/archer" element={<Members />} />
-          <Route path = "/barbarian" element={<TemplatePage />} />
-          <Route path = "/bard" element={<About />} />
+          <Route path = "/barbarian" element={<Barbarian />} />
+          <Route path = "/bard" element={<Bard />} />
           <Route path = "/druid" element={<Quest />} />
           <Route path = "/knight" element={<Knight />} />
           <Route path = "/mage" element={<Mage />} />
